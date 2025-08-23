@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MulMart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- Left section -->
+      <div class="navbar-left">
+        <a href="index.html" class="logo">MulMart.</a>
+      </div>
+      <!-- Search bar -->
+      <div class="search-bar">
+        <img
+          src="https://img.icons8.com/ios/50/0a94d6/search--v1.png"
+          alt="Search"
+        />
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search electronics, furniture and more..."
+        />
+        <img
+          src="https://img.icons8.com/?size=100&id=3062&format=png&color=0a94d6"
+          alt="Filter"
+          title="Clear"
+          id="clear-search"
+          style="opacity:.8"
+        />
+      </div>
+
+      <!-- Right section -->
+      <div class="navbar-right">
+        <a href="#" class="user-link"
+          ><img
+            src="https://img.icons8.com/ios/50/0a94d6/user--v1.png"
+            alt="User"
+          />
+          Sign Up/Sign In</a
+        >
+        <a href="#" class="cart-toggle" aria-label="Cart">
+          <span class="cart-badge" id="cart-count">0</span>
+          <img
+            src="https://img.icons8.com/ios/50/0a94d6/shopping-cart--v1.png"
+            alt="Cart"
+          />
+          Cart
+        </a>
+      </div>
+    </nav>
+
+    <!-- Cart drawer -->
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+      <div class="cart-drawer__header">
+        <h3>Your Cart</h3>
+        <button class="cart-close" id="cart-close">✕</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-drawer__footer">
+        <div class="cart-row">
+          <span>Subtotal</span><strong id="cart-subtotal">Rp0</strong>
+        </div>
+        <button class="add-to-cart" id="checkout-btn">Checkout</button>
+      </div>
+    </aside>
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="arrow arrow-left">
+        <img src="https://img.icons8.com/ios/24/0a94d6/chevron-left.png" alt="prev" />
+      </div>
+
+      <div class="hero-text">
+        <p>Best Deal Online on mobile phone</p>
+        <h1>SMARTPHONE.</h1>
+        <span>UP to 50% OFF</span>
+      </div>
+
+      <div class="hero-img">
+        <img src="https://placehold.co/250x250?text=placeholder" alt="Phone" />
+      </div>
+
+      <div class="arrow arrow-right">
+        <img src="https://img.icons8.com/ios/24/0a94d6/chevron-right.png" alt="next" />
+      </div>
+
+      <div class="dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <div class="categories-header">
+        <h2>Shop From <span>Top Categories</span></h2>
+        <a href="#"
+          >View All
+          <img
+            src="https://img.icons8.com/ios-glyphs/12/0a94d6/chevron-right.png"
+            alt="view all"
+        /></a>
+      </div>
+
+      <div class="category-list" id="category-list">
+        <button class="category-item active" data-category="all" aria-pressed="true">
+          <img src="https://placehold.co/120x120?text=All" alt="All" />
+          <p>All</p>
+        </button>
+        <button class="category-item" data-category="Phone">
+          <img src="https://placehold.co/120x120?text=Phone" alt="Phone" />
+          <p>Phone</p>
+        </button>
+        <button class="category-item" data-category="Electronics">
+          <img
+            src="https://placehold.co/120x120?text=Electronics"
+            alt="Electronics"
+          />
+          <p>Electronics</p>
+        </button>
+        <button class="category-item" data-category="Watches">
+          <img src="https://placehold.co/120x120?text=Watches" alt="Watches" />
+          <p>Watches</p>
+        </button>
+        <button class="category-item" data-category="Furniture">
+          <img
+            src="https://placehold.co/120x120?text=Furniture"
+            alt="Furniture"
+          />
+          <p>Furniture</p>
+        </button>
+        <button class="category-item" data-category="Decor">
+          <img src="https://placehold.co/120x120?text=Decor" alt="Decor" />
+          <p>Decor</p>
+        </button>
+        <button class="category-item" data-category="Cosmetics">
+          <img
+            src="https://placehold.co/120x120?text=Cosmetics"
+            alt="Cosmetics"
+          />
+          <p>Cosmetics</p>
+        </button>
+        <button class="category-item" data-category="Accessories">
+          <img
+            src="https://placehold.co/120x120?text=Accessories"
+            alt="Accessories"
+          />
+          <p>Accessories</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- Product Card List -->
+    <section class="product-section" id="product-list">
+      <!-- Example cards. Add data attributes for filtering/cart -->
+      <article class="product-card" data-category="Phone" data-id="p1" data-name="Galaxy S22 Ultra" data-price="8200000" data-img="https://placehold.co/250x250?text=Hello+World">
+        <div class="discount-badge">5% OFF</div>
+        <a href="#" class="product-link">
+          <img src="https://placehold.co/250x250?text=Hello+World" alt="Galaxy S22 Ultra" />
+          <h3>Galaxy S22 Ultra</h3>
+        </a>
+        <p class="product-price">Rp8.200.000 <span>Rp8.800.000</span></p>
+        <p class="save">Save - Rp600.000</p>
+        <button class="btn-cart-mini" aria-label="Add to cart">+ Cart</button>
+      </article>
+
+      <article class="product-card" data-category="Phone" data-id="p2" data-name="Galaxy A16 5G (4GB | 256 GB)" data-price="2600000" data-img="https://placehold.co/250x250?text=Hello+World">
+        <div class="discount-badge">33% OFF</div>
+        <a href="product-detail.html" class="product-link">
+          <img src="https://placehold.co/250x250?text=Hello+World" alt="Galaxy A16 5G" />
+          <h3>Galaxy A16 5G (4GB | 256 GB)</h3>
+        </a>
+        <p class="product-price">Rp2.600.000 <span>Rp4.000.000</span></p>
+        <p class="save">Save - Rp1.400.000</p>
+        <button class="btn-cart-mini" aria-label="Add to cart">+ Cart</button>
+      </article>
+
+      <article class="product-card" data-category="Phone" data-id="p3" data-name="Apple iPhone 15 (256 GB)" data-price="12000000" data-img="https://placehold.co/250x250?text=Hello+World">
+        <div class="discount-badge">42% OFF</div>
+        <a href="#" class="product-link">
+          <img src="https://placehold.co/250x250?text=Hello+World" alt="Apple iPhone 15" />
+          <h3>Apple iPhone 15 (256 GB)</h3>
+        </a>
+        <p class="product-price">Rp12.000.000 <span>Rp22.000.000</span></p>
+        <p class="save">Save - Rp10.000.000</p>
+        <button class="btn-cart-mini" aria-label="Add to cart">+ Cart</button>
+      </article>
+
+      <article class="product-card" data-category="Phone" data-id="p4" data-name="Xiaomi Mi 14T (12GB | 512 GB)" data-price="8500000" data-img="https://placehold.co/250x250?text=Hello+World">
+        <div class="discount-badge">23% OFF</div>
+        <a href="#" class="product-link">
+          <img src="https://placehold.co/250x250?text=Hello+World" alt="Xiaomi Mi 14T" />
+          <h3>Xiaomi Mi 14T (12GB | 512 GB)</h3>
+        </a>
+        <p class="product-price">Rp8.500.000 <span>Rp11.000.000</span></p>
+        <p class="save">Save - Rp2.500.000</p>
+        <button class="btn-cart-mini" aria-label="Add to cart">+ Cart</button>
+      </article>
+
+      <article class="product-card" data-category="Phone" data-id="p5" data-name="OPPO Find N5 (512 GB)" data-price="27000000" data-img="https://placehold.co/250x250?text=Hello+World">
+        <div class="discount-badge">4% OFF</div>
+        <a href="#" class="product-link">
+          <img src="https://placehold.co/250x250?text=Hello+World" alt="OPPO Find N5" />
+          <h3>OPPO Find N5 (512 GB)</h3>
+        </a>
+        <p class="product-price">Rp27.000.000 <span>Rp28.000.000</span></p>
+        <p class="save">Save - Rp1.000.000</p>
+        <button class="btn-cart-mini" aria-label="Add to cart">+ Cart</button>
+      </article>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

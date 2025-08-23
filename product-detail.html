@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- Left section -->
+      <div class="navbar-left">
+        <a href="index.html" class="logo">MulMart.</a>
+      </div>
+      <!-- Search bar -->
+      <div class="search-bar">
+        <img
+          src="https://img.icons8.com/ios/50/0a94d6/search--v1.png"
+          alt="Search"
+        />
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search electronics, furniture and more..."
+        />
+        <img
+          src="https://img.icons8.com/?size=100&id=3062&format=png&color=0a94d6"
+          alt="Filter"
+          title="Clear"
+          id="clear-search"
+          style="opacity: 0.8"
+        />
+      </div>
+
+      <!-- Right section -->
+      <div class="navbar-right">
+        <a href="#" class="user-link"
+          ><img
+            src="https://img.icons8.com/ios/50/0a94d6/user--v1.png"
+            alt="User"
+          />
+          Sign Up/Sign In</a
+        >
+        <a href="#" class="cart-toggle" aria-label="Cart">
+          <span class="cart-badge" id="cart-count">0</span>
+          <img
+            src="https://img.icons8.com/ios/50/0a94d6/shopping-cart--v1.png"
+            alt="Cart"
+          />
+          Cart
+        </a>
+      </div>
+    </nav>
+
+    <!-- Cart drawer shared -->
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+      <div class="cart-drawer__header">
+        <h3>Your Cart</h3>
+        <button class="cart-close" id="cart-close">✕</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-drawer__footer">
+        <div class="cart-row">
+          <span>Subtotal</span><strong id="cart-subtotal">Rp0</strong>
+        </div>
+        <button class="add-to-cart" id="checkout-btn">Checkout</button>
+      </div>
+    </aside>
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+
+    <div class="product-detail">
+      <!-- Left Gallery -->
+      <div class="product-gallery">
+        <img
+          id="detail-image"
+          src="https://placehold.co/500x500?text=Galaxy+A16+5G"
+          alt="Galaxy A16 5G"
+        />
+        <div class="thumbnail-list" id="thumbs">
+          <img src="https://placehold.co/100x100?text=Thumb1" class="active" />
+          <img src="https://placehold.co/100x100?text=Thumb2" />
+          <img src="https://placehold.co/100x100?text=Thumb3" />
+          <img src="https://placehold.co/100x100?text=Thumb4" />
+        </div>
+      </div>
+
+      <!-- Right Info -->
+      <div
+        class="product-info"
+        data-id="p2"
+        data-name="Galaxy A16 5G (4GB | 256 GB)"
+        data-price="2600000"
+        data-img="https://placehold.co/500x500?text=Galaxy+A16+5G"
+      >
+        <h4>EXCLUSIVE</h4>
+        <h1>Galaxy A16 5G (4GB | 256 GB)</h1>
+        <p>
+          Powerful performance and large storage, perfect for multitasking and
+          keeping all your favorite apps, photos, and videos without running out
+          of space.
+        </p>
+
+        <div class="price">
+          Rp2.600.000 <span>Rp4.000.000</span>
+          <div class="discount">33% OFF</div>
+        </div>
+
+        <div class="quantity">
+          <button class="qty-minus">-</button>
+          <span id="qty">1</span>
+          <button class="qty-plus">+</button>
+        </div>
+
+        <button class="add-to-cart" id="btn-add-detail">Add to Cart</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // simple gallery change
+      document.querySelectorAll("#thumbs img").forEach((img) => {
+        img.addEventListener("click", (e) => {
+          document.getElementById("detail-image").src =
+            e.currentTarget.src.replace("100x100", "500x500");
+          document
+            .querySelectorAll("#thumbs img")
+            .forEach((t) => t.classList.remove("active"));
+          e.currentTarget.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
